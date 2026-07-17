@@ -22,3 +22,10 @@ resilience4j:
         waitDurationInOpenState: 10s
         permittedNumberOfCallsInHalfOpenState: 2
         automaticTransitionFromOpenToHalfOpenEnabled: true
+
+# Spring Boot Actuator Configuration
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, circuitbreakers
