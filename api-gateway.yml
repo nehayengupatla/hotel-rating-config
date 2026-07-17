@@ -7,3 +7,27 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
+
+# Spring Cloud Gateway Configuration
+spring:
+  cloud:
+    gateway:
+      routes:
+
+        # User Service Route
+        - id: user-service-route
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/users/**
+
+        # Rating Service Route
+        - id: rating-service-route
+          uri: lb://RATING-SERVICE
+          predicates:
+            - Path=/ratings/**
+
+        # Hotel Service Route
+        - id: hotel-service-route
+          uri: lb://HOTEL-SERVICE
+          predicates:
+            - Path=/hotels/**
