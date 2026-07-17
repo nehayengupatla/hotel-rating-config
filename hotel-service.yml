@@ -1,11 +1,10 @@
 server:
   port: 8082
 
+# PostgreSQL Database Configuration
 spring:
-  application:
-    name: HOTEL-SERVICE
-
   datasource:
     url: jdbc:postgresql://localhost:5432/hotel_service
     username: postgres
     password: root
+    driver-class-name: org.postgresql.Driver
