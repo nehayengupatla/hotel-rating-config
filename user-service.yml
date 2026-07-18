@@ -23,6 +23,12 @@ resilience4j:
         permittedNumberOfCallsInHalfOpenState: 2
         automaticTransitionFromOpenToHalfOpenEnabled: true
 
+  retry:
+    instances:
+      hotelRatingRetry:
+        maxAttempts: 3
+        waitDuration: 2s
+
 # Spring Boot Actuator Configuration
 management:
   endpoints:
